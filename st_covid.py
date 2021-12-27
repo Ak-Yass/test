@@ -1,4 +1,3 @@
-import tensorflow as tf
 import streamlit as st
 from tensorflow import keras
 from keras.models import load_model
