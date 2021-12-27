@@ -76,40 +76,40 @@ if add_selectbox == 'About':
 
 if add_selectbox == 'CNN':
     st.title("Fashion MNIST using CNN")
-#     file_uploader = st.file_uploader('Upload cloth Image for Classification:')
-#     st.set_option('deprecation.showfileUploaderEncoding', False)
+    file_uploader = st.file_uploader('Upload cloth Image for Classification:')
+    st.set_option('deprecation.showfileUploaderEncoding', False)
 
-#     if file_uploader is not None:
-#         image = Image.open(file_uploader)
-#         text_io = io.TextIOWrapper(file_uploader)
-#         image = image.resize((180, 180))
-#         st.image(image, 'Uploaded image:')
-
-
-#         def classify_image(image, model):
-#             st.write("classifying......")
-#             img = ImageOps.grayscale(image)
-
-#             img = img.resize((28, 28))
-#             img = np.expand_dims(img, 0)
-#             img = np.expand_dims(img, 3)
-#             img = (img / 255.0)
-
-#             img = 1 - img
-
-#             pred = model.predict(img)
-
-#             st.write("The Predicted image is:", class_names[np.argmax(pred)])
-#             st.write('Prediction probability :{:.2f}%'.format(np.max(pred) * 100))
+    if file_uploader is not None:
+        image = Image.open(file_uploader)
+        text_io = io.TextIOWrapper(file_uploader)
+        image = image.resize((180, 180))
+        st.image(image, 'Uploaded image:')
 
 
-#         st.write('Click her to classify the image')
-#         if st.button('Classify Image'):
-#             classify_image(image, cnn_model)
-#             st.success('Image successfully classified!')
-#             with st.spinner('Wait for it...'):
-#                 time.sleep(2)
-#                 st.success('Done!')
-#                 st.balloons()
-#     else:
-#         st.write("Please select image:")
+        def classify_image(image, model):
+            st.write("classifying......")
+            img = ImageOps.grayscale(image)
+
+            img = img.resize((28, 28))
+            img = np.expand_dims(img, 0)
+            img = np.expand_dims(img, 3)
+            img = (img / 255.0)
+
+            img = 1 - img
+
+            pred = model.predict(img)
+
+            st.write("The Predicted image is:", class_names[np.argmax(pred)])
+            st.write('Prediction probability :{:.2f}%'.format(np.max(pred) * 100))
+
+
+        st.write('Click her to classify the image')
+        if st.button('Classify Image'):
+            classify_image(image, cnn_model)
+            st.success('Image successfully classified!')
+            with st.spinner('Wait for it...'):
+                time.sleep(2)
+                st.success('Done!')
+                st.balloons()
+    else:
+        st.write("Please select image:")
