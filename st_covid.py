@@ -1,4 +1,3 @@
-import tensorflow as tf
 import streamlit as st
 from tensorflow import keras
 from keras.models import load_model
@@ -28,7 +27,7 @@ st.markdown("""
 fas_data = keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fas_data.load_data()
 
-cnn_model = load_model("C:/Users/Yassi/PycharmProjects/pyTF/trials/cnn_model")
+cnn_model = load_model(".\test\cnn_model")
 # cnn_model = load_model("cnn_models")
 
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
@@ -54,16 +53,16 @@ if add_selectbox == 'Welcome':
 
 if add_selectbox == 'About':
     def model_summary():
-        img = Image.open(r".\trials\summary.png")
+        img = Image.open(r".\test\summary.png")
         st.image(img)
 
 
     def model_training():
-        img = Image.open(r".\trials\training.png")
+        img = Image.open(r".\test\training.png")
         st.image(img)
 
     def model_plot():
-        img = Image.open(r".\trials\plot.png")
+        img = Image.open(r".\test\plot.png")
         st.image(img)
 
 
