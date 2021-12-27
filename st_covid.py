@@ -29,7 +29,7 @@ fas_data = keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fas_data.load_data()
 
 # cnn_model = load_model(".\test\cnn_model")
-cnn_model = load_model("cnn_models")
+cnn_model = load_model("cnn_models.hdf5")
 
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
