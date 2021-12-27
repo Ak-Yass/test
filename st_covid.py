@@ -43,10 +43,10 @@ if add_selectbox == 'Welcome':
     st.title("WELCOME TO Fashion MNIST")
 
 
-#     def file_selector(folder_path='.'):
-#         filenames = os.listdir(folder_path)
-#         selected_filename = st.selectbox('Select a file', filenames)
-#         return os.path.join(folder_path, selected_filename)
+    def file_selector(folder_path='.'):
+        filenames = os.listdir(folder_path)
+        selected_filename = st.selectbox('Select a file', filenames)
+        return os.path.join(folder_path, selected_filename)
 
 
     filename = file_selector()
@@ -54,16 +54,16 @@ if add_selectbox == 'Welcome':
 
 if add_selectbox == 'About':
     def model_summary():
-        img = Image.open(r".\test\summary.png")
+        img = Image.open(r"summary.png")
         st.image(img)
 
 
     def model_training():
-        img = Image.open(r".\test\training.png")
+        img = Image.open(r"training.png")
         st.image(img)
 
     def model_plot():
-        img = Image.open(r".\test\plot.png")
+        img = Image.open(r"plot.png")
         st.image(img)
 
 
